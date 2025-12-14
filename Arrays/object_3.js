@@ -26,11 +26,11 @@ console.log(teacher)
 // today it comes in JSON file
 
 // how JSON looks:
-{
-    "name": "Kalpana",
-    "course": "javascript",
-    "price": "free" 
-}
+// {
+//     "name": "Kalpana",
+//     "course": "javascript",
+//     "price": "free" 
+// }
 
 // API call from JSON
 [
