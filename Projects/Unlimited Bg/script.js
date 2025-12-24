@@ -8,16 +8,22 @@ const randomColor = function(){
     }
     return color;
 }
-console.log(randomColor());
+let intervalId = null
 
-let intervalId;
+const startChangingColor = function(){
+    if(intervalId === null){
+    intervalId = setInterval(() => {
+            document.body.style.backgroundColor = randomColor()
+        }, 1000)
+    }
+}
 
-    document.getElementById("start").addEventListener("click", function () {
-        intervalId = setInterval(() => {
-            document.body.style.backgroundColor = randomColor();
-        }, 1000);
-    });
+const stopChangingColor = function(){
+    clearInterval(intervalId);
+    intervalId = null;
+}
 
-    document.getElementById("stop").addEventListener("click", function () {
-        clearInterval(intervalId);
-    })
+document.querySelector("#start").addEventListener("click", startChangingColor)
+document.querySelector("#stop").addEventListener("click", stopChangingColor)
+
+
