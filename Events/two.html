@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <title>Events-2</title>
     <style>
         body {
             background-color: black;
@@ -36,44 +36,17 @@
 </body>
 
 <script>
-    // document.getElementById("camera").onclick = function(){
-    //     alert("camera ckicked")
-    // }           didn't work
-
-    // propagation ability
-    document.getElementById('camera').addEventListener("click", function(){
-        alert("camera ckicked")
+    document.querySelector('#images').addEventListener
+    ('click', function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.ta);
+            
+        }
+        let removeIt = e.target.parentNode
+        // 2 methods to remove
+        // removeIt.parentNode.removeChild(removeIt)
+        // removeIt.remove()
     }, false)
-
-
-    //attachEvent(), jQuery - on
-
-    document.getElementById("camera").addEventListener("click", function(e){
-        console.log(e)
-    }, false)
-    // events: browser event, environment event
-    //view: whichi, width, x, y
-
-    //type, timeStamp, defaultPrevented, target, toElement, 
-    //srcElement, currentTarget, clientX, clientY, screenX, screenY
-    //altkey, ctrlkay, shiftkey, keyCode
-
-    // Event Propagation:
-    // Capturing phase(true): top to bottom
-    // Bubbling phase(false):  bottom to top
-
-    document.getElementById("camera").addEventListener("click", function(e){
-        console.log("hwllo")
-    }, false)
-
-    document.getElementById("camera").addEventListener("click", function(e){
-        console.log("hwll2")
-        e.stopPropagation() // stops bubbling
-    }, false)
-
-    document.getElementById('google').addEventListener('click', function(e){
-        e.preventDefault() // prevents opening the google.com
-    }, false)
-
 </script>
 </html>
