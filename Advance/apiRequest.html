@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;         
+        }
+    </style>
+</head>
+<body>
+    <p>value = 0, state = UNSENT</p>
+    <p>value = 1, state = OPENED            -> open()</p>
+    <p>value = 2, state = HEADERS_RECEIVED  -> send()</p>
+    <p>value = 3, state = LOADING           -> responseText</p>
+    <p>value = 4, state = DONE</p>
+</body>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                console.log(data);
+                console.log(data.followers)
+            }
+            
+        }
+        console.log(xhr.readyState)
+        xhr.send()
+    </script>
+</html>
