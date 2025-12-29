@@ -9,6 +9,23 @@
     <button>Button Clicked</button>
 </body>
 <script>
-    class 
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:3000"
+            // requirement: 
+            // As soon as this page loads, a react object should get created, and i should get a reference of the above button, and whenever the button is clicked -> something should be returned/ outputted/ some work should get done
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this))
+            //React {library: 'React', server: 'https://localhost:3000'}
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
 </script>
 </html>
