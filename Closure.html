@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #orange {
+            background-color: orange;
+            color: white;
+        }
+        #green {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // generic code to change background color by clicking buttons
+    //     document.body.style.backgroundColor = 'orange';
+    // });
+    // document.getElementById('green').addEventListener('click', function() {
+    //     document.body.style.backgroundColor = 'green';
+    // });
+    // if we have 500 colours then how will we do it?
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}
+        return function(){
+            document.body.style.backgroundColor = `${color}`;    
+          }  
+    }
+    document.getElementById('orange').addEventListener('click', clickHandler('orange'));
+    document.getElementById('green').addEventListener('click', clickHandler('green'));
+
+    // real case scenario of closure
+
+</script>
+</html>
