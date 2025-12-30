@@ -18,7 +18,10 @@ Object.create(null)
 const chai = {
     name: "ginger chai",
     price: 250,
-    isAvailable: true
+    isAvailable: true,
+    orderChai: function(){
+        console.log("your Chai can't be prepared");
+    }
 }
 console.log(Object.getOwnPropertyDescriptor(chai, "price"))
 // { value: 250, 
@@ -35,3 +38,11 @@ Object.defineProperty(chai, "name", {
 console.log(Object.getOwnPropertyDescriptor(chai, "name"))
 
 // 12:29 (47th)
+for (let [key, value] of Object.entries(chai)){
+    if(typeof value !== 'function'){
+    console.log(`${key} : ${value}`);
+    }
+}
+
+// enumerable false for "name"
+
